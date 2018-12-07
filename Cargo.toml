@@ -1,0 +1,10 @@
+[package]
+name = "nickel_sled"
+version = "0.1.0"
+authors = ["hswick <hdswick@gmail.com>"]
+
+[dependencies]
+sled = "0.16.6"
+nickel = { git = "https://github.com/jolhoeft/nickel.rs.git", branch = "serde" }
+plugin = "0.2.6"
+typemap = "0.3.3"
