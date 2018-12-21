@@ -6,9 +6,11 @@ use sled::{ConfigBuilder, Tree};
 pub struct SledMiddleware { pub tree: Tree }
 
 impl SledMiddleware {
-    pub fn new() -> SledMiddleware {
-        let config = ConfigBuilder::new().temporary(true).build();
-        let tree = Tree::start(config).unwrap();
+    pub fn new(path: &str) -> SledMiddleware {
+        //let config = ConfigBuilder::new().temporary(true).build();
+        //let tree = Tree::start(config).unwrap();
+
+        let tree = Tree::start_default(path).expect(&format!("given path was not found. path: {}", path));
         
         SledMiddleware { tree: tree }
     }
